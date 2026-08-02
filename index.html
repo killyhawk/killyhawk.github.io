@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Killyhawk — Effective Communication for Frontier Tech</title>
+<meta name="description" content="Earned media and strategic communications for crypto, AI, and emerging technology.">
+
+<meta property="og:title" content="Killyhawk — Effective Communication for Frontier Tech">
+<meta property="og:description" content="Earned media and strategic communications for crypto, AI, and emerging technology.">
+<meta property="og:image" content="https://killyhawk.com/assets/og-image.png">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://killyhawk.com/assets/og-image.png">
+
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+/* Bastardo Grotesk — licensed webfont (Giulia Boggio) */
+@font-face{
+  font-family:'Bastardo Grotesk';
+  src:url('assets/fonts/BastardoGrotesk-Regular.woff2') format('woff2');
+  font-weight:400;font-style:normal;font-display:swap;
+}
+@font-face{
+  font-family:'Bastardo Grotesk';
+  src:url('assets/fonts/BastardoGrotesk-Semibold.woff2') format('woff2');
+  font-weight:600;font-style:normal;font-display:swap;
+}
+
+:root{
+  --forest:#262A29;
+  --stone:#DDDACB;
+  --sage:#8B9E8A;
+  --gold:#C4A87D;
+  --umber:#7A5C4F;
+  --storm:#6E7F8C;
+  --rule:rgba(38,42,41,.16);
+  --font-display:'Bastardo Grotesk','Space Grotesk',sans-serif;
+  --font-body:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;
+}
+
+*{margin:0;padding:0;box-sizing:border-box}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+
+body{
+  background:var(--stone);
+  color:var(--forest);
+  font-family:var(--font-body);
+  font-size:1.0625rem;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+
+h1{
+  font-family:var(--font-display);
+  font-weight:400;
+  letter-spacing:-0.02em;
+  line-height:1.04;
+  color:var(--forest);
+  font-size:clamp(2.4rem,6.8vw,5rem);
+  max-width:16ch;
+}
+
+a{color:var(--forest);text-decoration:none}
+a:hover{text-decoration:underline}
+a:focus-visible{outline:2px solid var(--forest);outline-offset:3px}
+
+.wrap{max-width:1060px;margin:0 auto;padding:0 24px}
+
+.kicker{
+  font-family:var(--font-body);
+  font-weight:600;
+  font-size:.8rem;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+}
+
+nav{padding:26px 0;border-bottom:1px solid var(--rule)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between}
+nav img{height:28px;width:auto;display:block}
+
+.hero{padding:48px 0 12px;position:relative;overflow:hidden}
+.contour{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+.contour path{fill:none;stroke:var(--forest);stroke-width:9;opacity:.14}
+.hero p.sub{margin-top:28px;font-size:1.15rem;max-width:52ch}
+.hero p.tagline{margin-top:20px;font-size:1.25rem;font-weight:500}
+.cta-row{margin-top:32px;display:flex;gap:26px;align-items:center;flex-wrap:wrap}
+.btn{
+  display:inline-block;
+  background:var(--gold);
+  color:var(--forest);
+  font-weight:600;font-size:.9rem;letter-spacing:.02em;
+  padding:15px 30px;border-radius:2px;
+  transition:background .15s ease,color .15s ease;
+}
+.btn:hover{text-decoration:none;background:var(--forest);color:var(--stone)}
+.cta-row .alt a{font-weight:500;font-size:.95rem}
+
+#clients{padding:36px 0 48px}
+#clients .kicker{color:var(--storm);margin-bottom:14px}
+.wall{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(210px,1fr));
+  gap:2px;border:1px solid var(--rule);background:var(--rule);
+}
+.wall a{
+  display:block;
+  min-height:92px;
+  line-height:1.35;
+  background:var(--stone);
+  padding:24px 20px;
+  font-family:var(--font-display);
+  font-weight:400;font-size:1.05rem;
+  letter-spacing:-0.01em;
+  color:var(--forest);
+  transition:background .15s ease;
+}
+.wall a:hover{text-decoration:none;background:rgba(38,42,41,.08)}
+.wall a small{
+  display:block;font-family:var(--font-body);
+  color:var(--storm);
+  font-size:.875rem;margin-top:3px;letter-spacing:0;
+}
+.partners{margin-top:24px;color:var(--storm);font-size:.95rem}
+.partners strong{color:var(--forest);font-weight:500}
+.partners a{color:var(--storm);text-decoration:underline;text-underline-offset:3px}
+
+footer{background:var(--forest);color:var(--stone);padding:48px 0 44px}
+.foot-meta{
+  font-size:.9rem;color:var(--stone);
+}
+.foot-meta img{height:22px;display:block}
+.foot-meta p{opacity:.7;font-size:.85rem;margin-top:10px}
+
+@media (max-width:640px){
+  #clients{padding-top:28px}
+  .cta-row{margin-top:24px}
+  nav img{height:23px}
+  .hero{padding:40px 0 12px}
+  .wall a{padding:16px 18px;min-height:0}
+  .contour{display:none}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <img src="assets/lockup-dark.png" alt="Killyhawk">
+  </div>
+</nav>
+
+<header class="hero">
+  <svg class="contour" viewBox="1010 0 2330 1500" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M800,1377 C808,1345 833,1262 850,1183 C867,1104 883,969 900,904 C917,839 933,822 950,794 C967,767 983,754 1000,738 C1017,723 1033,712 1050,702 C1067,691 1083,683 1100,676 C1117,669 1133,664 1150,660 C1167,656 1183,653 1200,651 C1217,649 1233,648 1250,648 C1267,648 1283,648 1300,649 C1317,650 1333,652 1350,655 C1367,658 1383,661 1400,664 C1417,667 1433,671 1450,676 C1467,680 1483,685 1500,690 C1517,695 1533,701 1550,706 C1567,712 1583,718 1600,724 C1617,730 1633,736 1650,743 C1667,750 1683,756 1700,763 C1717,770 1733,777 1750,784 C1767,791 1783,799 1800,806 C1817,813 1833,820 1850,827 C1867,834 1883,842 1900,849 C1917,856 1933,864 1950,871 C1967,878 1983,885 2000,892 C2017,899 2033,906 2050,913 C2067,920 2083,927 2100,934 C2117,940 2133,947 2150,953 C2167,959 2183,966 2200,972 C2217,977 2233,983 2250,988 C2267,994 2283,1000 2300,1004 C2317,1009 2333,1014 2350,1018 C2367,1022 2383,1027 2400,1031 C2417,1035 2433,1038 2450,1041 C2467,1044 2483,1046 2500,1048 C2517,1051 2533,1052 2550,1054 C2567,1055 2583,1056 2600,1056 C2617,1057 2633,1056 2650,1056 C2667,1055 2683,1053 2700,1051 C2717,1049 2733,1046 2750,1042 C2767,1039 2783,1035 2800,1030 C2817,1024 2833,1019 2850,1012 C2867,1005 2883,998 2900,990 C2917,981 2933,971 2950,960 C2967,949 2983,937 3000,922 C3017,906 3033,891 3050,870 C3067,848 3083,826 3100,795 C3117,764 3133,727 3150,684 C3167,642 3183,589 3200,542 C3217,494 3233,444 3250,400 C3267,358 3283,319 3300,284 C3317,248 3333,216 3350,186 C3367,157 3392,118 3400,104 "/>
+  </svg>
+  <div class="wrap">
+    <h1>Effective Communication for Frontier Tech</h1>
+    <p class="sub">Earned media and go-to-market advisory for crypto, AI and emerging technology companies.</p>
+    <p class="tagline">Own your story.</p>
+    <div class="cta-row">
+      <a class="btn" href="https://calendar.app.google/ysZtrQqyvN4a7czM9" target="_blank" rel="noopener">Schedule a Call ↗</a>
+      <span class="alt"><a href="mailto:patrick@killyhawk.com">patrick@killyhawk.com</a></span>
+    </div>
+  </div>
+</header>
+
+<section id="clients">
+  <div class="wrap">
+    <p class="kicker">Selected Work</p>
+    <div class="wall">
+      <a href="https://sky.money" target="_blank" rel="noopener">Sky<small>formerly MakerDAO</small></a>
+      <a href="https://jup.ag" target="_blank" rel="noopener">Jupiter</a>
+      <a href="https://www.sharplink.com" target="_blank" rel="noopener">Sharplink</a>
+      <a href="https://www.eigencloud.xyz" target="_blank" rel="noopener">EigenLayer<small>now EigenCloud</small></a>
+      <a href="https://moonbeam.network" target="_blank" rel="noopener">Moonbeam</a>
+      <a href="https://litestrategy.com" target="_blank" rel="noopener">Lite Strategy</a>
+      <a href="https://irys.xyz" target="_blank" rel="noopener">Irys</a>
+      <a href="https://term.finance" target="_blank" rel="noopener">Term Finance</a>
+      <a href="https://symm.io" target="_blank" rel="noopener">Symmio</a>
+      <a href="https://www.cork.tech" target="_blank" rel="noopener">Cork Protocol</a>
+      <a href="https://cookbook.dev" target="_blank" rel="noopener">Cookbook</a>
+      <a href="https://buildonarcana.com" target="_blank" rel="noopener">Arcana<small>formerly Empyreal</small></a>
+    </div>
+    <p class="partners"><strong>Partners:</strong> <a href="https://www.kajmak.studio/" target="_blank" rel="noopener">Kajmak Studio</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-meta">
+      <div>
+        <img src="assets/lockup.png" alt="Killyhawk">
+        <p>Effective Communication for Frontier Tech<br>© Killyhawk 2026</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
