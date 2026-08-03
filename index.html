@@ -85,12 +85,11 @@ a:focus-visible{outline:2px solid var(--forest);outline-offset:3px}
 nav{padding:26px 0;border-bottom:1px solid var(--rule)}
 nav .wrap{display:flex;align-items:center;justify-content:space-between}
 nav img{height:28px;width:auto;display:block}
-nav .nav-link{font-size:.9rem;font-weight:500}
 
 .hero{padding:48px 0 12px;position:relative;overflow:hidden}
 .hero p.sub{margin-top:14px;font-size:1.15rem;max-width:52ch}
 .hero p.tagline{margin-top:20px;font-size:1.25rem;font-weight:500}
-.cta-row{margin-top:32px;display:flex;gap:26px;align-items:center;flex-wrap:wrap}
+.cta-row{margin-top:32px;display:flex;gap:14px;align-items:center;flex-wrap:wrap}
 .btn{
   display:inline-block;
   background:var(--gold);
@@ -100,6 +99,8 @@ nav .nav-link{font-size:.9rem;font-weight:500}
   transition:background .15s ease,color .15s ease;
 }
 .btn:hover{text-decoration:none;background:var(--forest);color:var(--stone)}
+.btn-ghost{background:transparent;color:var(--forest);border:1px solid var(--forest);padding:14px 29px}
+.btn-ghost:hover{background:var(--forest);color:var(--stone);border-color:var(--forest)}
 
 #clients{padding:36px 0 48px}
 #clients .kicker{color:var(--forest);margin-bottom:14px}
@@ -151,7 +152,6 @@ footer{background:var(--forest);color:var(--stone);padding:48px 0 44px}
 <nav>
   <div class="wrap">
     <img src="assets/lockup-dark.png" alt="Killyhawk">
-    <a class="nav-link" href="mailto:patrick@killyhawk.com">Email</a>
   </div>
 </nav>
 
@@ -162,6 +162,7 @@ footer{background:var(--forest);color:var(--stone);padding:48px 0 44px}
     <p class="tagline">Own your story.</p>
     <div class="cta-row">
       <a class="btn" href="https://calendar.app.google/ysZtrQqyvN4a7czM9" target="_blank" rel="noopener">Schedule a Call ↗</a>
+      <a class="btn btn-ghost" href="mailto:patrick@killyhawk.com">Email</a>
     </div>
   </div>
 </header>
