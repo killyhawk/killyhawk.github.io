@@ -50,6 +50,9 @@
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 
 body{
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
   background:var(--stone);
   color:var(--forest);
   font-family:var(--font-body);
@@ -131,7 +134,7 @@ nav img{height:28px;width:auto;display:block}
 .partners strong{color:var(--forest);font-weight:500}
 .partners a{color:var(--storm);text-decoration:underline;text-underline-offset:3px}
 
-footer{background:var(--forest);color:var(--stone);padding:48px 0 44px}
+footer{background:var(--forest);color:var(--stone);padding:48px 0 44px;margin-top:auto}
 .foot-meta{
   font-size:.9rem;color:var(--stone);
 }
