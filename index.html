@@ -124,7 +124,7 @@ nav img{height:28px;width:auto;display:block}
 .gallery-nav button:focus-visible{outline:2px solid var(--forest);outline-offset:3px}
 .gallery-nav button[disabled]{opacity:.3;cursor:default;background:transparent;color:var(--forest)}
 
-.gallery{position:relative;border:1px solid var(--rule);background:var(--rule)}
+.gallery{position:relative}
 .gallery::before,.gallery::after{
   content:"";position:absolute;top:0;bottom:0;width:56px;z-index:1;pointer-events:none;
   opacity:0;transition:opacity .2s ease;
@@ -134,7 +134,7 @@ nav img{height:28px;width:auto;display:block}
 .gallery.can-left::before,.gallery.can-right::after{opacity:1}
 
 .track{
-  display:flex;gap:2px;
+  display:flex;gap:0;
   overflow-x:auto;overflow-y:hidden;
   scroll-snap-type:x mandatory;
   scroll-behavior:smooth;
