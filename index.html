@@ -111,31 +111,32 @@ nav img{height:28px;width:auto;display:block}
 /* Logo grid: borderless tiles */
 .wall{
   display:grid;
-  grid-template-columns:repeat(auto-fill,minmax(210px,1fr));
+  grid-template-columns:repeat(auto-fill,minmax(150px,1fr));
   gap:0;
+  max-width:680px;
 }
 .wall a{
   position:relative;
-  min-height:120px;
+  min-height:84px;
   display:flex;align-items:center;justify-content:center;
   background:var(--stone);
-  padding:22px 20px 30px;
+  padding:16px 14px 22px;
   color:var(--forest);
   transition:background .15s ease;
 }
 .wall a:hover{text-decoration:none;background:rgba(38,42,41,.08)}
 .wall a img{
   display:block;
-  height:var(--h,30px);
-  max-width:180px;
+  height:calc(var(--h,30px) * .67);
+  max-width:122px;
   width:auto;
 }
 .wall a small{
-  position:absolute;left:0;right:0;bottom:12px;
+  position:absolute;left:0;right:0;bottom:8px;
   text-align:center;
   font-family:var(--font-body);
   color:var(--storm);
-  font-size:.8rem;letter-spacing:0;line-height:1.2;
+  font-size:.7rem;letter-spacing:0;line-height:1.2;
 }
 
 .partners{margin-top:24px;color:var(--storm);font-size:.95rem;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
@@ -155,10 +156,10 @@ footer{background:var(--forest);color:var(--stone);padding:48px 0 44px;margin-to
   .cta-row{margin-top:24px}
   nav img{height:23px}
   .hero{padding:40px 0 12px}
-  .wall{grid-template-columns:repeat(2,1fr)}
-  .wall a{min-height:96px;padding:16px 14px 26px}
-  .wall a small{bottom:9px;font-size:.72rem}
-  .wall a img{max-width:140px;height:calc(var(--h,30px) * .85)}
+  .wall{grid-template-columns:repeat(2,1fr);max-width:none}
+  .wall a{min-height:80px;padding:14px 12px 22px}
+  .wall a small{bottom:7px;font-size:.68rem}
+  .wall a img{max-width:120px;height:calc(var(--h,30px) * .7)}
 }
 </style>
 </head>
