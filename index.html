@@ -108,72 +108,29 @@ nav img{height:28px;width:auto;display:block}
 #clients{padding:36px 0 48px}
 #clients .kicker{color:var(--forest);margin-bottom:14px}
 
-/* Logo carousel: user-driven only (arrows, drag, wheel, trackpad, keys). No autoplay. */
-.gallery-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px}
-.gallery-head .kicker{margin:0}
-.gallery-nav{display:flex;gap:6px}
-.gallery-nav button{
-  width:38px;height:38px;
-  border:1px solid var(--forest);border-radius:2px;
-  background:transparent;color:var(--forest);
-  font:inherit;font-size:1.1rem;line-height:1;
-  cursor:pointer;
-  transition:background .15s ease,color .15s ease,opacity .15s ease;
+/* Logo grid: borderless tiles */
+.wall{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(210px,1fr));
+  gap:0;
 }
-.gallery-nav button:hover{background:var(--forest);color:var(--stone)}
-.gallery-nav button:focus-visible{outline:2px solid var(--forest);outline-offset:3px}
-.gallery-nav button[disabled]{opacity:.3;cursor:default;background:transparent;color:var(--forest)}
-
-.gallery{position:relative}
-.gallery::before,.gallery::after{
-  content:"";position:absolute;top:0;bottom:0;width:56px;z-index:1;pointer-events:none;
-  opacity:0;transition:opacity .2s ease;
-}
-.gallery::before{left:0;background:linear-gradient(90deg,var(--stone),rgba(221,218,203,0))}
-.gallery::after{right:0;background:linear-gradient(270deg,var(--stone),rgba(221,218,203,0))}
-.gallery.can-left::before,.gallery.can-right::after{opacity:1}
-
-.track{
-  display:flex;gap:0;
-  overflow-x:auto;overflow-y:hidden;
-  scroll-snap-type:x mandatory;
-  scroll-behavior:smooth;
-  overscroll-behavior-x:contain;
-  scrollbar-width:none;
-  cursor:grab;
-  -webkit-overflow-scrolling:touch;
-}
-.track::-webkit-scrollbar{display:none}
-.track.dragging{cursor:grabbing;scroll-snap-type:none;scroll-behavior:auto}
-.track:focus-visible{outline:2px solid var(--forest);outline-offset:-2px}
-
-.track a{
+.wall a{
   position:relative;
-  flex:0 0 220px;
-  scroll-snap-align:start;
   min-height:120px;
   display:flex;align-items:center;justify-content:center;
   background:var(--stone);
   padding:22px 20px 30px;
   color:var(--forest);
   transition:background .15s ease;
-  -webkit-user-drag:none;user-select:none;
 }
-.track a:hover{text-decoration:none;background:rgba(38,42,41,.08)}
-.track a img{
+.wall a:hover{text-decoration:none;background:rgba(38,42,41,.08)}
+.wall a img{
   display:block;
   height:var(--h,30px);
   max-width:180px;
   width:auto;
-  pointer-events:none;
 }
-.track a .lockup{display:flex;align-items:center;gap:9px}
-.track a .lockup img{height:var(--h,30px)}
-.track a .lockup span{
-  font-family:var(--font-display);font-weight:400;
-  font-size:1.35rem;letter-spacing:.02em;line-height:1;
-}
-.track a small{
+.wall a small{
   position:absolute;left:0;right:0;bottom:12px;
   text-align:center;
   font-family:var(--font-body);
@@ -198,11 +155,10 @@ footer{background:var(--forest);color:var(--stone);padding:48px 0 44px;margin-to
   .cta-row{margin-top:24px}
   nav img{height:23px}
   .hero{padding:40px 0 12px}
-  .track a{flex-basis:168px;min-height:96px;padding:16px 14px 26px}
-  .track a small{bottom:9px;font-size:.72rem}
-  .track a img{max-width:140px;height:calc(var(--h,30px) * .85)}
-  .track a .lockup span{font-size:1.15rem}
-  .gallery::before,.gallery::after{width:32px}
+  .wall{grid-template-columns:repeat(2,1fr)}
+  .wall a{min-height:96px;padding:16px 14px 26px}
+  .wall a small{bottom:9px;font-size:.72rem}
+  .wall a img{max-width:140px;height:calc(var(--h,30px) * .85)}
 }
 </style>
 </head>
@@ -228,29 +184,21 @@ footer{background:var(--forest);color:var(--stone);padding:48px 0 44px;margin-to
 
 <section id="clients">
   <div class="wrap">
-    <div class="gallery-head">
-      <p class="kicker" id="work-label">Selected Work</p>
-      <div class="gallery-nav" aria-label="Scroll logos">
-        <button type="button" class="prev" aria-label="Previous">&larr;</button>
-        <button type="button" class="next" aria-label="Next">&rarr;</button>
-      </div>
-    </div>
-    <div class="gallery">
-      <div class="track" tabindex="0" role="region" aria-labelledby="work-label">
-        <a href="https://sky.money" target="_blank" rel="noopener" style="--h:42px"><img src="assets/logos/sky.svg" alt="Sky"></a>
-        <a href="https://jup.ag" target="_blank" rel="noopener" style="--h:40px"><img src="assets/logos/jupiter.svg" alt="Jupiter"></a>
-        <a href="https://www.sharplink.com" target="_blank" rel="noopener" style="--h:38px"><img src="assets/logos/sharplink.svg" alt="Sharplink"></a>
-        <a href="https://www.eigencloud.xyz" target="_blank" rel="noopener" style="--h:60px"><img src="assets/logos/eigen.svg" alt="EigenLayer"><small>now EigenCloud</small></a>
-        <a href="https://www.railgun.org" target="_blank" rel="noopener" style="--h:28px"><img src="assets/logos/railgun.svg" alt="Railgun"></a>
-        <a href="https://moonbeam.network" target="_blank" rel="noopener" style="--h:28px"><img src="assets/logos/moonbeam.svg" alt="Moonbeam"></a>
-        <a href="https://litestrategy.com" target="_blank" rel="noopener" style="--h:30px"><img src="assets/logos/litestrategy.svg" alt="Lite Strategy"></a>
-        <a href="https://irys.xyz" target="_blank" rel="noopener" style="--h:34px"><img src="assets/logos/irys.svg" alt="Irys"></a>
-        <a href="https://term.finance" target="_blank" rel="noopener" style="--h:42px"><img src="assets/logos/termfinance.svg" alt="Term Finance"></a>
-        <a href="https://symm.io" target="_blank" rel="noopener" style="--h:34px"><img src="assets/logos/symmio.svg" alt="Symmio"></a>
-        <a href="https://www.cork.tech" target="_blank" rel="noopener" style="--h:38px"><img src="assets/logos/cork.svg" alt="Cork Protocol"></a>
-        <a href="https://levr.bet" target="_blank" rel="noopener" style="--h:30px"><img src="assets/logos/levr.svg" alt="Levr Bet"></a>
-        <a href="https://buildonarcana.com" target="_blank" rel="noopener" style="--h:26px"><img src="assets/logos/arcana.svg" alt="Arcana"><small>formerly Empyreal</small></a>
-      </div>
+    <p class="kicker">Selected Work</p>
+    <div class="wall">
+      <a href="https://sky.money" target="_blank" rel="noopener" style="--h:42px"><img src="assets/logos/sky.svg" alt="Sky"></a>
+      <a href="https://jup.ag" target="_blank" rel="noopener" style="--h:40px"><img src="assets/logos/jupiter.svg" alt="Jupiter"></a>
+      <a href="https://www.sharplink.com" target="_blank" rel="noopener" style="--h:38px"><img src="assets/logos/sharplink.svg" alt="Sharplink"></a>
+      <a href="https://www.eigencloud.xyz" target="_blank" rel="noopener" style="--h:60px"><img src="assets/logos/eigen.svg" alt="EigenLayer"><small>now EigenCloud</small></a>
+      <a href="https://www.railgun.org" target="_blank" rel="noopener" style="--h:28px"><img src="assets/logos/railgun.svg" alt="Railgun"></a>
+      <a href="https://moonbeam.network" target="_blank" rel="noopener" style="--h:28px"><img src="assets/logos/moonbeam.svg" alt="Moonbeam"></a>
+      <a href="https://litestrategy.com" target="_blank" rel="noopener" style="--h:30px"><img src="assets/logos/litestrategy.svg" alt="Lite Strategy"></a>
+      <a href="https://irys.xyz" target="_blank" rel="noopener" style="--h:34px"><img src="assets/logos/irys.svg" alt="Irys"></a>
+      <a href="https://term.finance" target="_blank" rel="noopener" style="--h:42px"><img src="assets/logos/termfinance.svg" alt="Term Finance"></a>
+      <a href="https://symm.io" target="_blank" rel="noopener" style="--h:34px"><img src="assets/logos/symmio.svg" alt="Symmio"></a>
+      <a href="https://www.cork.tech" target="_blank" rel="noopener" style="--h:38px"><img src="assets/logos/cork.svg" alt="Cork Protocol"></a>
+      <a href="https://levr.bet" target="_blank" rel="noopener" style="--h:30px"><img src="assets/logos/levr.svg" alt="Levr Bet"></a>
+      <a href="https://buildonarcana.com" target="_blank" rel="noopener" style="--h:26px"><img src="assets/logos/arcana.svg" alt="Arcana"><small>formerly Empyreal</small></a>
     </div>
     <p class="partners"><strong>Partners:</strong> <a href="https://www.kajmak.studio/" target="_blank" rel="noopener"><img src="assets/logos/kajmak.svg" alt="">Kajmak Studio</a></p>
   </div>
@@ -266,77 +214,6 @@ footer{background:var(--forest);color:var(--stone);padding:48px 0 44px;margin-to
     </div>
   </div>
 </footer>
-
-<script>
-(function(){
-  var gallery=document.querySelector('.gallery');
-  var track=gallery.querySelector('.track');
-  var prev=document.querySelector('.gallery-nav .prev');
-  var next=document.querySelector('.gallery-nav .next');
-
-  function step(){
-    var tile=track.querySelector('a');
-    var w=tile?tile.getBoundingClientRect().width+2:220;
-    return Math.max(w,Math.floor(track.clientWidth/w)*w);
-  }
-  function update(){
-    var max=track.scrollWidth-track.clientWidth-1;
-    var x=track.scrollLeft;
-    gallery.classList.toggle('can-left',x>1);
-    gallery.classList.toggle('can-right',x<max);
-    prev.disabled=x<=1;
-    next.disabled=x>=max;
-  }
-  prev.addEventListener('click',function(){track.scrollBy({left:-step(),behavior:'smooth'});});
-  next.addEventListener('click',function(){track.scrollBy({left:step(),behavior:'smooth'});});
-  track.addEventListener('scroll',update,{passive:true});
-  window.addEventListener('resize',update);
-
-  /* Mouse wheel over the gallery scrolls it sideways; passes through to the page at either end. */
-  track.addEventListener('wheel',function(e){
-    if(Math.abs(e.deltaX)>Math.abs(e.deltaY))return;
-    var max=track.scrollWidth-track.clientWidth;
-    var atStart=track.scrollLeft<=0&&e.deltaY<0;
-    var atEnd=track.scrollLeft>=max-1&&e.deltaY>0;
-    if(atStart||atEnd)return;
-    e.preventDefault();
-    track.scrollLeft+=e.deltaY;
-  },{passive:false});
-
-  /* Click-and-drag with the mouse. Suppresses the link click if the pointer actually moved. */
-  var down=false,startX=0,startLeft=0,moved=false;
-  track.addEventListener('pointerdown',function(e){
-    if(e.pointerType!=='mouse'||e.button!==0)return;
-    down=true;moved=false;startX=e.clientX;startLeft=track.scrollLeft;
-    track.classList.add('dragging');
-    track.setPointerCapture(e.pointerId);
-  });
-  track.addEventListener('pointermove',function(e){
-    if(!down)return;
-    var dx=e.clientX-startX;
-    if(Math.abs(dx)>4)moved=true;
-    track.scrollLeft=startLeft-dx;
-  });
-  function end(e){
-    if(!down)return;
-    down=false;
-    track.classList.remove('dragging');
-    if(e&&e.pointerId!==undefined&&track.hasPointerCapture(e.pointerId))track.releasePointerCapture(e.pointerId);
-  }
-  track.addEventListener('pointerup',end);
-  track.addEventListener('pointercancel',end);
-  track.addEventListener('click',function(e){if(moved){e.preventDefault();moved=false;}},true);
-
-  /* Keyboard: arrow keys when the track has focus. */
-  track.addEventListener('keydown',function(e){
-    if(e.key==='ArrowRight'){track.scrollBy({left:step(),behavior:'smooth'});e.preventDefault();}
-    if(e.key==='ArrowLeft'){track.scrollBy({left:-step(),behavior:'smooth'});e.preventDefault();}
-  });
-
-  update();
-  window.addEventListener('load',update);
-})();
-</script>
 
 </body>
 </html>
